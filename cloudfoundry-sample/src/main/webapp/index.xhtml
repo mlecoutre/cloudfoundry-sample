@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	template="/WEB-INF/templates/brandLayout.xhtml">
+
+	<ui:define name="applicationTitle">AJF2 Showcase</ui:define>
+
+	<!-- CONTENT DEFINITION -->
+	<ui:define name="content">
+		<div class="col_left">
+			<h1>Showcase</h1>
+			<br /> Connect you using admin/psw credentials to have access to
+			employeesmanagement function.
+			<ul>
+				<li>List Employees</li>
+				<li>Create Employee</li>
+				<li>Fire Employee within list view</li>
+			</ul>
+
+		</div>
+		<div class="col_right">
+			<h1>Content</h1>
+			<br />This application contains code samples and different use cases
+			that you can use when you create your own applications<br />
+			<ul>
+
+				<li>Data validation</li>
+				<li>Layout</li>
+				<li>I18N</li>
+				<li>Logging management</li>
+				<li>Security</li>
+				<li>Persistance</li>
+				<li>Monitoring</li>
+
+			</ul>
+
+		</div>
+	</ui:define>
+
+	<!-- NEWS PART DEFINITION -->
+
+	<ui:define name="news">
+		<div class="news_title">
+
+			News<br />
+
+		</div>
+
+		<div id="slideshow">
+
+			<ul id="sContent">
+
+				<li><div>
+						Security based on Shiro<br />Test compatibility on all Servers -
+						19/02/2012<br />Tomcat, Jetty OK, still WAS - 20/02/2012
+					</div></li>
+				<li><div>
+						New Branding - 16/02/2012<br />branding compliance
+						ok - 17/02/2012<br />Layout definition - 29/01/2012
+					</div></li>
+				<li><div>
+						Employee management implementation - 15/01/2012<br />Showcase
+						implementation - 22/01/2012<br />Start showcase application -
+						12/01/2012
+					</div></li>
+
+			</ul>
+
+		</div>
+	</ui:define>
+
+	<!-- SERVICE PART DEFINITION -->
+
+	<ui:define name="services">
+		<p:accordionPanel multiple="false" styleClass="services">
+			<p:tab title="Manage Employee">
+				<ul class="orange">
+					<li><a href="employeemanagement/listEmployees.xhtml">list
+							employees</a></li>
+
+					<li><a href="employeemanagement/createEmployee.xhtml">hire
+							employee</a></li>
+
+					<li><a href="employeemanagement/listEmployees.xhtml">fire
+							employee</a></li>
+
+				</ul>
+			</p:tab>
+			<p:tab title="Security">
+				<b>Based on SHIRO</b> : Work on every application servers (jetty,
+					tomcat, was)
+
+			</p:tab>
+			<p:tab title="Showcase">
+				<h:panelGrid columns="2" cellpadding="10">
+					<h:outputText
+						value="Just some demo of basic components and framework behaviour." />
+				</h:panelGrid>
+			</p:tab>
+		</p:accordionPanel>
+
+	</ui:define>
+
+</ui:composition>

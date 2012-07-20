@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+	<p:menubar>
+
+		<!--  ADD YOUR CONTENT HERE  -->
+
+		<p:submenu label="#{m['menu.showcase.title']}">
+			<p:menuitem value="#{m['menu.showcase.uimessages']}"
+				url="showcase/uimessages.jsf" />
+			<p:menuitem value="#{m['menu.showcase.layout']}"
+				url="showcase/layout.jsf" />
+		</p:submenu>
+
+		<!-- When already logged in : user Name button with logout submenu -->
+		<p:submenu label="#{securityMBean.username}"
+			rendered="#{securityMBean.isLogIn}" icon="ui-icon ui-icon-key">
+			<p:menuitem value="Log Out"
+				actionListener="#{securityMBean.doLogout}"
+				action="index.xhtml?faces-redirect=true"
+				icon="ui-icon ui-icon-close" />
+		</p:submenu>
+	</p:menubar>
+
+</ui:composition>

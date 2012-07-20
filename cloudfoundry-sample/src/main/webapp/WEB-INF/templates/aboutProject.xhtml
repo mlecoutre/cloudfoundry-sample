@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+
+	<p:dialog header="#{m['title.AboutProject']}"
+		widgetVar="aboutProjectDialog" showEffect="bounce"
+		hideEffect="explode" height="200">
+
+
+		<h:outputLabel for="impl_title"
+			value="#{m['AboutProject.label.ProjectTitle']}: " style="weight:bold"></h:outputLabel>
+		<h:outputText id="impl_title"
+			value="#{aboutMBean.implementationTitle}"></h:outputText>
+
+		<br />
+		<h:outputLabel for="impl_vendor"
+			value="#{m['AboutProject.label.ProjectVendor']}: "
+			style="weight:bold"></h:outputLabel>
+		<h:outputText id="impl_vendor"
+			value="#{aboutMBean.implementationVendor}"></h:outputText>
+		<br />
+		<h:outputLabel for="impl_version"
+			value="#{m['AboutProject.label.ProjectVersion']}: "
+			style="weight:bold"></h:outputLabel>
+		<h:outputText id="impl_version"
+			value="#{aboutMBean.implementationVersion}"></h:outputText>
+	</p:dialog>
+
+</ui:composition>

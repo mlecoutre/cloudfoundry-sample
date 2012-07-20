@@ -1,0 +1,34 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<base
+		href="http://${request.serverName}:${request.serverPort}${request.contextPath}/" />
+
+
+	<h:outputStylesheet library="brand/css" name="style.css" />
+	<h:outputStylesheet library="brand/css" name="ajf.css" />
+	<h:outputScript library="brand/js" name="brwsniff.js" />
+	<h:outputScript library="brand/js" name="easySlider.js" />
+	<h:outputScript library="brand/js" name="script.js" />
+
+	<!-- Application custom scripts and css -->
+	<h:outputStylesheet library="css" name="custom.css" />
+	<h:outputScript library="js" name="custom.js" />
+
+	<title><ui:insert name="applicationTitle">
+			<h:outputText value="#{m['application.title']}" />
+		</ui:insert></title>
+</h:head>
+
+<h:body>
+
+	<ui:insert name="content" />
+
+</h:body>
+</html>

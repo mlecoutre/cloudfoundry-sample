@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+	
+	<ul>
+		<li><h:outputLink id="linkFAQ" value="/${request.contextPath}/shared/faq.xhtml">
+				<h:outputText value="#{m['menu.faq']}" />
+			</h:outputLink></li>
+		<li><h:outputLink id="linkContact" value="/${request.contextPath}/shared/contacts.xhtml">
+				<h:outputText value="#{m['menu.contact']}" />
+			</h:outputLink></li>
+		<li><h:outputLink id="linkHelp" target="_blank"
+				onclick="window.open('#{helpMBean.currentPage}','helpWindow', 'top=30px left=50px width=800px height=464px dependent=yes menubar=0 toolbar=0 location=0 scrollbars=0 resizable=1 status=0'); return false;">
+				<h:outputText value="#{m['menu.help']}" />
+			</h:outputLink></li>
+		<li><p:commandLink oncomplete="loggerDialog.show()"
+				value="#{m['menu.parameters']}" /></li>
+		<li><p:commandLink oncomplete="aboutProjectDialog.show()"
+				value="#{m['menu.about']}" /></li>
+	</ul>
+</ui:composition>

@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<title>Help</title>
+	<base
+		href="http://${request.serverName}:${request.serverPort}${request.contextPath}/" />
+	<h:outputStylesheet library="brand/css" name="style.css" />
+	<h:outputStylesheet library="brand/css" name="ajf.css" />
+
+	<!-- Application custom scripts and css -->
+	<h:outputStylesheet library="css" name="custom.css" />
+	<h:outputScript library="js" name="custom.js" />
+	<style>
+body {
+	overflow-x: hidden;
+	overflow-y: hidden;
+}
+</style>
+</h:head>
+<h:body>
+	<div class="classicHelpHeader">
+		<div class="classicHelpBandeau">
+
+			<h:link value="HELP" styleClass="ajftitle" onclick="window.close();" />
+		</div>
+	</div>
+	<div class="helpContent">
+		<ui:insert name="helpContent" />
+	</div>
+
+	<div class="helpFooter">
+		<div class="helpMenu">
+			<b>[</b><a href="shared/help/index.xhtml">Summary</a> | <a href="#"
+				onclick="window.close();">Close</a><b>]</b>
+		</div>
+
+	</div>
+</h:body>
+</html>

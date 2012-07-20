@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+	<h:form id="InloginForm">
+		<p:focus for="username" />
+		<h:panelGrid columns="7" styleClass="login">
+			<h:outputText value="#{m['loginBox.label.userName']}" />
+			<h:inputText id="username" value="#{securityMBean.username}"
+				tabindex="1" styleClass="jq_watermark" />
+			<p:watermark for="username" value="#{m['loginBox.label.userName']}" />
+			<h:outputText value="#{m['loginBox.label.password']}" />
+
+			<h:inputSecret id="password" tabindex="2"
+				value="#{securityMBean.password}" styleClass="jq_watermark" />
+			<p:watermark for="password" value="#{m['loginBox.label.password']}" />
+			<h:commandButton tabindex="3" action="#{securityMBean.doLogin}"
+				styleClass="access" value="#{m['loginBox.label.login']}">
+			</h:commandButton>
+		</h:panelGrid>
+	</h:form>
+
+</ui:composition>

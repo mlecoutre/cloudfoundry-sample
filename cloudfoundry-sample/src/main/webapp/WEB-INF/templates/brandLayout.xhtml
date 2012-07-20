@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<base
+		href="http://${request.serverName}:${request.serverPort}${request.contextPath}/" />
+		
+	<h:outputStylesheet library="brand/css" name="style.css" />
+	<h:outputStylesheet library="brand/css" name="ajf.css" />
+	<h:outputScript library="brand/js" name="brwsniff.js" />
+	<h:outputScript library="brand/js" name="easySlider.js" />
+	<h:outputScript library="brand/js" name="script.js" />
+
+	<!-- Application custom scripts and css -->
+	<h:outputStylesheet library="css" name="custom.css" />
+	<h:outputScript library="js" name="custom.js" />
+	<title><ui:insert name="applicationTitle">
+			<h:outputText value="#{m['application.title']}" />
+		</ui:insert></title>
+</h:head>
+
+<h:body>
+
+	<div class="wrapper">
+
+		<div class="header1">
+
+			<div class="logo"></div>
+
+			<ui:include src="loadingStatus.xhtml" />
+			<h:form id="nav_menu">
+				<div class="nav-menu">
+					<ui:include src="navmenu.xhtml" />
+				</div>
+			</h:form>
+			<!--  h:form id="headerForm">
+				<ui:include src="brand/navmenu.xhtml" />
+			</h:form -->
+			<span class="search, welcomeMenuHeader"> <h:form id="menu">
+					<ui:include src="/shared/menu.xhtml" />
+				</h:form>
+			</span>
+		</div>
+
+		<div class="header2">
+			<div class="bandeau_login">
+
+				<div class="logoAppli">
+					<ui:include src="/shared/title.xhtml" />
+				</div>
+				<ui:include src="loginBox.xhtml" />
+			</div>
+		</div>
+
+		<h:form id="messagesGG">
+			<p:growl id="messages" showDetail="true" autoUpdate="true"
+				globalOnly="true" sticky="false" />
+		</h:form>
+		<!-- NEWS PART -->
+		<div class="news">
+
+			<div class="news_corner"></div>
+			<ui:insert name="news" />
+		</div>
+
+		<div class="middle">
+			<ui:insert name="content" />
+		</div>
+
+		<div class="service">
+			<h1>Services</h1>
+			<br />
+			<ui:insert name="services" />
+		</div>
+	</div>
+	<div id="boxes">
+
+		<div id="PopInJQuery" class="window"></div>
+		<div id="mask"></div>
+		<ui:include src="aboutProject.xhtml" />
+		<ui:include src="logger.xhtml" />
+	</div>
+	<ui:include src="footer.xhtml" />
+
+</h:body>
+</html>

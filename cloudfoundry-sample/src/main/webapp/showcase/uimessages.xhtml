@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	template="/ext/templates/brandClassicLayout.xhtml">
+
+	<ui:define name="applicationTitle">Showcase page for ui message</ui:define>
+	<ui:define name="content">
+		<h:form id="form">
+
+			<center>
+				<H1>
+					<h:outputText value="#{m['employee.management.title']}" />
+				</H1>
+			</center>
+
+			<div class="col_left">
+				<p:panel>
+				this screen show the different way to expose a message to the user.
+				<ul>
+						<li>input error</li>
+						<li>business error, warning, info</li>
+						<li>popup msg to confirm an action</li>
+					</ul>
+				</p:panel>
+			</div>
+			<div class="col_right">
+				<p:panel header="Search" toggleable="true" style="width:500px">
+					<h:panelGrid columns="3" style="margin-bottom:5px" cellpadding="2"
+						columnClasses="label, column">
+						<h:outputText value="parameter " />
+
+						<p:inputText id="parameter" value="#{showcaseMBean.parameter}">
+							<f:ajax execute="parameter" event="blur" render="parameter-error" />
+						</p:inputText>
+						<h:panelGroup>
+
+							<p:message id="parameter-error" for="parameter" />
+						</h:panelGroup>
+
+
+
+						<p:commandButton id="RaiseError"
+							action="#{showcaseMBean.createError}" value="Raise Error">
+						</p:commandButton>
+
+						<p:commandButton id="RaiseWarning"
+							action="#{showcaseMBean.createWarning}" value="Raise Warning">
+						</p:commandButton>
+
+						<p:commandButton id="RaiseInfo"
+							action="#{showcaseMBean.createInfo}" value="Raise Info">
+						</p:commandButton>
+						<p:commandButton id="Search" action="#{showcaseMBean.doSthg}"
+							value="Search" />
+					</h:panelGrid>
+				</p:panel>
+	
+			</div>
+
+		</h:form>
+	</ui:define>
+
+</ui:composition>

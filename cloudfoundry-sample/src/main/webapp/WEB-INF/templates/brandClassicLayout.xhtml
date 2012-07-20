@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<base
+		href="http://${request.serverName}:${request.serverPort}${request.contextPath}/" />
+
+	<h:outputStylesheet library="css" name="custom.css" />
+	<h:outputStylesheet library="brand/css" name="style.css" />
+	<h:outputStylesheet library="brand/css" name="ajf.css" />
+	<title><ui:insert name="applicationTitle">
+			<h:outputText value="#{m['application.title']}" />
+		</ui:insert></title>
+</h:head>
+
+<h:body>
+
+	<div class="wrapper">
+
+		<div class="header1">
+
+			<div class="logo"></div>
+ 
+			<div class="classicTitle">
+				<ui:include src="/shared/title.xhtml" />
+			</div>
+			<!-- Right PART -->
+			<div class="rightPartHeader">
+				<h:form id="nav_menu">
+					<div class="nav-menu">
+						<ui:include src="navmenu.xhtml" />
+					</div>
+				</h:form>
+
+
+				<div class="classicMenuHeader">
+					<h:form id="menuBar">
+						<ui:include src="/shared/menu.xhtml" />
+					</h:form>
+				</div>
+			</div>
+		</div>
+		<div class="classicHeader2">
+			<div class="classicBandeau_login">
+
+				<div class="classiclogoAppli">
+					<ui:include src="/shared/title.xhtml" />
+				</div>
+			</div>
+		</div>
+
+
+		<h:form id="messagesGG">
+			<p:growl id="messages" showDetail="true" autoUpdate="true"
+				globalOnly="true" sticky="false" />
+		</h:form>
+
+		<div class="middle">
+			<ui:insert name="content" />
+		</div>
+	</div>
+
+	<div id="boxes">
+
+		<div id="PopInJQuery" class="window"></div>
+		<div id="mask"></div>
+		<ui:include src="aboutProject.xhtml" />
+		
+		<ui:include src="logger.xhtml" />
+	</div>
+	<ui:include src="footer.xhtml" />
+</h:body>
+</html>

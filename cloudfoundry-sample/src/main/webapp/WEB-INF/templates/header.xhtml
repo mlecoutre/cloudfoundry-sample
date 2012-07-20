@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+	<h:form id="headerForm">
+		<h:panelGrid width="100%" cellpadding="0" cellspacing="0" columns="5"
+			border="0">
+			<h:panelGrid style="width:150px;" cellpadding="0" cellspacing="0"
+				columns="2" border="0">
+
+				<h:graphicImage library="images" name="logo_header.png"
+					style="height:35px;" />
+				<ui:include src="loadingStatus.xhtml" />
+			</h:panelGrid>
+			<ui:include src="/shared/title.xhtml" />
+
+			<h:panelGroup style="width:600px;margin-left:auto;margin-right:auto"
+				border="0" layout="block">
+				<ui:include src="/shared/menu.xhtml" />
+			</h:panelGroup>
+
+			<ui:include src="navmenu.xhtml" />
+
+		</h:panelGrid>
+
+		<p:growl id="messages" showDetail="true" autoUpdate="true"
+			globalOnly="true" sticky="false" />
+
+	</h:form>
+
+	<ui:include src="aboutProject.xhtml" />
+	<ui:include src="loginBox.xhtml" />
+	<ui:include src="logger.xhtml" />
+	<ui:include src="helpDialog.xhtml" />
+
+</ui:composition>
